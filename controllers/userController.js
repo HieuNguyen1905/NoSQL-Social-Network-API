@@ -34,7 +34,7 @@ router.post("/:userId/friends/:friendId", async (req, res) => {
             res.send("Already friend with this person!")
         }
     }
-    const user = await User.findOneAndUpdate({ _id: req.params.userId }, { $push: { friends: req.params.friendId} }, { new: true })
+    const user = await User.findOneAndUpdate({ _id: req.params.userId }, { $push: { friends: req.params.friendId } }, { new: true })
     res.json(user)
 })
 
